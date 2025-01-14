@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Login', async ({ page }) => {
+test('Incident E2E', async ({ page }) => {
   await page.goto('https://lab-03254-bos.lab-internal.pega.com/prweb',{ headless: false, slowMo: 1000 });
 
   await expect(page.getByPlaceholder('User name')).toBeVisible();
@@ -32,6 +32,6 @@ test('Login', async ({ page }) => {
   await page.getByTestId('PrivacyPolicy-parent').getByTestId(':form-field:').getByTestId(':form-field:label').locator('div').check();
 
   await page.getByRole('button', { name: 'Submit' }).click();
-  await expect(page.getByTestId(':case-view:summary-fields').getByText('Pending-Dispatch').first()).toBeVisible({ timeout: 10_000 });
+  await expect(page.getByLabel('Stage Dispatch, Current')).toBeVisible({ timeout: 10_000 });
 
 });
