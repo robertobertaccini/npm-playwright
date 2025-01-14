@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 
 test('Incident E2E', async ({ page }) => {
-  await page.goto('https://lab-03254-bos.lab-internal.pega.com/prweb',{ headless: false, slowMo: 1000 });
+  await page.goto('YOURSEVER',{ headless: false, slowMo: 1000 });
 
   await expect(page.getByPlaceholder('User name')).toBeVisible();
   await page.getByPlaceholder('User name').fill('AUTCustomer@tellusmoreref');
-  await page.getByPlaceholder('Password', { exact: true }).fill('Devops2025!');
+  await page.getByPlaceholder('Password', { exact: true }).fill('PASSWORD');
   await page.getByRole('button', { name: 'Log in' }).click();
 
   await expect(page.getByRole('button', { name: 'Incident', exact: true })).toBeVisible();
