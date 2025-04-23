@@ -1,14 +1,14 @@
 import { test, expect } from '@playwright/test';
 
 test('Incident E2E', async ({ page }) => {
-  await page.goto('YOURSEVER',{ headless: false, slowMo: 1000 });
+  await page.goto('https://dev.pega.one:8443/prweb',{ headless: false, slowMo: 1000, ignoreHTTPSErrors: true });
 
   await expect(page.getByPlaceholder('User name')).toBeVisible();
-  await page.getByPlaceholder('User name').fill('AUTCustomer@tellusmoreref');
-  await page.getByPlaceholder('Password', { exact: true }).fill('PASSWORD');
+  await page.getByPlaceholder('User name').fill('CustomerREF@SL');
+  await page.getByPlaceholder('Password', { exact: true }).fill('Banana2025!');
   await page.getByRole('button', { name: 'Log in' }).click();
 
-  await expect(page.getByRole('button', { name: 'Incident', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Incident', exact: true })).toBeVisible({ timeout: 10_000 });
   await page.getByRole('button', { name: 'Incident', exact: true }).click();
 
   await expect(page.getByTestId('IncidentType:select:control')).toBeVisible({ timeout: 10_000 });
