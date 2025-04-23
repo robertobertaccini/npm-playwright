@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 test('Incident E2E', async ({ page }) => {
-  await page.goto('https://dev.pega.one:8443/prweb',{ headless: false, slowMo: 1000, ignoreHTTPSErrors: true });
+
+  await page.goto('https://dev.pega.one:8443/prweb',{ headless: false, slowMo: 1000 });
 
   await expect(page.getByPlaceholder('User name')).toBeVisible();
   await page.getByPlaceholder('User name').fill('CustomerREF@SL');

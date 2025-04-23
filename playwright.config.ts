@@ -34,6 +34,7 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    /*
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'],launchOptions: {
@@ -47,10 +48,11 @@ export default defineConfig({
             args: ['--ignore-certificate-errors']
         } },
     },
-
+*/
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'],launchOptions: {
+      use: { ...devices['Desktop Safari'],
+      launchOptions: {
             args: ['--ignore-certificate-errors']
         } },
     },
