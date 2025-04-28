@@ -2,7 +2,9 @@
   "name": "npm-playwright",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts":  { "test": "playwright codegen --ignore-https-errors" },
+  "scripts": {
+    "test": "playwright codegen --ignore-https-errors"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -10,5 +12,8 @@
   "devDependencies": {
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
   }
 }
