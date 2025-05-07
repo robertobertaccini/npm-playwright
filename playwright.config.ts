@@ -43,7 +43,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     headless: true,
     launchOptions: {
-    slowMo: 3000,
+    slowMo: 0,
 },
   },
 
@@ -53,7 +53,6 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
